@@ -1,0 +1,48 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "standard",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "plugins": ["prettier", "@typescript-eslint"],
+  "ignorePatterns": ["*.js", "dist", "node_modules", "build"],
+  "parserOptions": {
+    "requireConfigFile": false
+  },
+  "rules": {
+    "no-async-promise-executor": "off",
+    "no-unsafe-finally": "off",
+    "no-extra-semi": "off",
+    "prettier/prettier": ["error"],
+    "no-console": "off",
+    "comma-dangle": "off",
+    "multiline-ternary": "off",
+    "no-use-before-define": "off",
+    "indent": "off",
+    "no-case-declarations": "off",
+    "space-before-function-paren": "off",
+
+    "@typescript-eslint/no-extra-semi": "off",
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "function",
+        "format": ["PascalCase", "camelCase"]
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase", "camelCase", "snake_case"]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-undef": "off"
+  },
+  "parser": "@typescript-eslint/parser"
+}
