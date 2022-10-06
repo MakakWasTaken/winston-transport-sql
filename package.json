@@ -28,7 +28,8 @@
     "typescript:check": "tsc --noEmit",
     "typescript:build": "tsc -b",
     "prepare": "husky install",
-    "prepublishOnly": "yarn typescript:build"
+    "prepublishOnly": "yarn typescript:build",
+    "prepack": "yarn typescript:build"
   },
   "dependencies": {
     "knex": "^2.3.0",
