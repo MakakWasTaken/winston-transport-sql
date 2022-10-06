@@ -6,7 +6,7 @@ export interface SQLTransportOptions {
   client: Knex<any, unknown[]>
   tableName?: string
   level?: Transport.TransportStreamOptions['level']
-  namingOptions: SQLNamingOptions
+  namingOptions?: SQLNamingOptions
 }
 
 export interface SQLNamingOptions {
@@ -22,12 +22,14 @@ export interface SQLNamingOptions {
 export class SQLTransport extends Transport {
   tableName: string
   client: Knex<any, unknown[]>
+  namingOptions?: SQLNamingOptions
 
   constructor(opts: SQLTransportOptions) {
     super()
     this.client = opts.client
     this.tableName = opts.tableName || 'WinstonLogs'
     this.level = opts.level
+    this.namingOptions = opts.namingOptions
 
     this.init()
   }
